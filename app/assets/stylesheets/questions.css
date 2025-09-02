@@ -1,0 +1,133 @@
+/******************************************** 
+ リセット用
+*********************************************/
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+/******************************************** 
+  ヘッダー 
+*********************************************/
+
+header {
+  height: 65px;
+  background-color: #1C3667;
+}
+
+.header-contents {
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.logo {
+  font-size: 23px;
+  letter-spacing: 1.8px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: #FFFFFF;
+}
+
+.post-button {
+  width: 80px;
+  height: 32px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.post-button a {
+  line-height: 32px;
+  text-decoration: none;
+  color: #3A3736;
+  font-size: 16px;
+}
+
+/******************************************** 
+  一覧画面
+*********************************************/
+.index-main {
+  height: calc(100vh - 65px);
+  padding: 90px 0;
+  background-color: #F2F2F3;
+}
+
+.post-contents {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.post-content {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 25px;
+}
+
+.comment {
+  width: 70px;
+  height: 100%;
+  background-color: #1C3667;
+  color: #FFFFFF;
+  border-radius: 5px 0 0 5px;
+}
+
+.comment__num {
+  width: 70px;
+  height: 38px;
+  margin: 20px auto 0;
+  line-height: 38px;
+  font-size: 26px;
+  text-align: center;
+}
+
+.comment__unit {
+  width: 70px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.question {
+  width: 630px;
+  padding: 10px 15px;
+  background-color: #FFFFFF;
+}
+
+.question-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.question-top__title {
+  width: 500px;
+  font-size: 14px;
+}
+
+.question-top__name {
+  font-size: 12px;
+  text-align: right;
+}
+
+.question-bottom {
+  margin-top: 10px;
+}
+
+.question-bottom__content {
+  font-size: 12px;
+}
