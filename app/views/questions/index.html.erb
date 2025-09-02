@@ -1,0 +1,9 @@
+<div class="questions-index">
+  <% @questions.each do |question| %>
+    <div class="question">
+      <p>タイトル：<%= h question.title %></p>
+      <p>内容：<%= h question.question %></p>
+      <p>投稿者名：<%= h question.post_user %></p>
+    </div>
+  <% end %>
+</div>
