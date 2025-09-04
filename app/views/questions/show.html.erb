@@ -1,38 +1,52 @@
-<div class='#'>
-  <div class='#'>タイトル：
-    <%= @question.title %>
-  </div>
-  <div class='#'>投稿者名：
-    <%= @question.post_user %>
-  </div>
-  <div class='#'>質問内容：
-    <%= @question.question %>
-  </div>
-</div>
+<div class="show-container">
 
-<div class='#'>
-  <%= form_with model: [@question, @answer], local: true do |form| %>
-    <div class='#'>
-      <div class='#'>
-        <%= form.text_area :answer, placeholder: "回答する" %>
-      </div>
-      <div class='#'>
-        <%= form.text_field :answer_user, placeholder: "ユーザー名" %>
-      </div>
-      <div class='#'>
-        <%= form.submit 'POST'%>
-      </div>
+  <div class='question-detail'>
+    <div class="question-detail__item">
+      <div class="question-detail__label">タイトル：</div>
+      <div class="question-detail__value"><%= @question.title %></div>
     </div>
-  <% end %>
-</div>
-
-<% @answers.each do |answer| %>
-  <div class='#'>
-    <div class='#'>回答：
-      <%= answer.answer %>
+    <div class="question-detail__item">
+      <div class="question-detail__label">投稿者名：</div>
+      <div class="question-detail__value"><%= @question.post_user %></div>
     </div>
-    <div class='#'>投稿者名：
-      <%= answer.answer_user %>
+    <div class="question-detail__item">
+      <div class="question-detail__label">質問内容：</div>
+      <%# simple_formatを使うと改行が反映されます %>
+      <div class="question-detail__value"><%= simple_format(@question.question) %></div>
     </div>
   </div>
-<% end %>
+
+  <div class='answer-section'>
+    
+    <div class='answer-form'>
+      <%= form_with model: [@question, @answer], local: true do |form| %>
+          <div class='answer-form__group'>
+            <%= form.text_area :answer, placeholder: "回答する" %>
+          </div>
+          <div class='answer-form__group'>
+            <%= form.text_field :answer_user, placeholder: "ユーザー名" %>
+          </div>
+          <div class='answer-form__actions'>
+            <%= form.submit 'POST' %>
+          </div>
+      <% end %>
+    </div>
+
+    <div class='answer-list'>
+      <% @answers.each do |answer| %>
+        <div class="answer-item">
+          <div class="answer-item__row">
+            <div class="answer-item__label">回　　答：</div>
+            <div class="answer-item__value"><%= simple_format(answer.answer) %></div>
+          </div>
+          <div class="answer-item__row">
+            <div class="answer-item__label">投稿者名：</div>
+            <div class="answer-item__value"><%= answer.answer_user %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>
