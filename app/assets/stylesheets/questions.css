@@ -34,14 +34,11 @@ header {
   align-items: center;
 }
 
-.logo {
+.logo a{
   font-size: 23px;
   letter-spacing: 1.8px;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-}
-
-.logo a {
   text-decoration: none;
   color: #FFFFFF;
 }
@@ -121,6 +118,10 @@ header {
 .question-top__title {
   width: 500px;
   font-size: 14px;
+}
+
+.question-top__title a{
+  color: #000000;
 }
 
 .question-top__name {
